@@ -1,7 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { fetchFromAPI } from "./utils/fetchFromAPI";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    fetchFromAPI("6/21/date").then((data) => console.log(data));
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
