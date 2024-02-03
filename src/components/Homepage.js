@@ -1,5 +1,6 @@
 import React from "react";
 import Options from "./Options";
+import Button from "./Button";
 
 const Homepage = () => {
   return (
@@ -9,6 +10,7 @@ const Homepage = () => {
         Get facts on the option you choose from below!
       </h3>
       <Options />
+      <Button />
     </div>
   );
 };

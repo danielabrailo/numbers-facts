@@ -37,3 +37,20 @@
 .options-container .option:hover {
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.6);
 }
+
+.get-fact-button {
+  width: fit-content;
+  padding: 8px 15px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all .3s ease-out;
+}
+
+.get-fact-button:hover {
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.6);
+}
