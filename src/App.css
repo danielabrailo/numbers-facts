@@ -49,8 +49,21 @@
   font-weight: 700;
   letter-spacing: 2px;
   transition: all .3s ease-out;
+  background-color: rgb(186, 198, 221);
 }
 
 .get-fact-button:hover {
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.6);
+}
+
+.fact-container {
+  text-align: center;
+  line-height: 40px;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.fact-title {
+  font-size: 40px;
+  font-weight: 400;
 }
