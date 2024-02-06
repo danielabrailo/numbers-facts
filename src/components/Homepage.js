@@ -5,6 +5,7 @@ import Options from "./Options";
 import Button from "./Button";
 import Fact from "./Fact";
 import Input from "./Input";
+import Year from "./Year";
 import DateInput from "./DateInput";
 
 const Homepage = () => {
@@ -35,6 +36,8 @@ const Homepage = () => {
         ? `${month}/${day}/date`
         : option === 4
         ? `${number}/trivia`
+        : option === 5
+        ? `${number}/year`
         : ""
     ).then((data) => {
       setFact(data);
@@ -51,6 +54,7 @@ const Homepage = () => {
       <Options setOption={setOption} />
       {(option === 2 || option === 4) && <Input setNumber={setNumber} />}
       {option === 3 && <DateInput setDay={setDay} setMonth={setMonth} />}
+      {option === 5 && <Year setNumber={setNumber} />}
       <Button setIsLoading={setIsLoading} fetchNewFact={fetchNewFact} />
       <Fact fact={fact} />
     </div>
