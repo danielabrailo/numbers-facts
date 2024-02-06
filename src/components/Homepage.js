@@ -33,6 +33,8 @@ const Homepage = () => {
         ? `${number}/math`
         : option === 3
         ? `${month}/${day}/date`
+        : option === 4
+        ? `${number}/trivia`
         : ""
     ).then((data) => {
       setFact(data);
@@ -47,7 +49,7 @@ const Homepage = () => {
         Get facts on the option you choose from below!
       </h3>
       <Options setOption={setOption} />
-      {option === 2 && <Input setNumber={setNumber} />}
+      {(option === 2 || option === 4) && <Input setNumber={setNumber} />}
       {option === 3 && <DateInput setDay={setDay} setMonth={setMonth} />}
       <Button setIsLoading={setIsLoading} fetchNewFact={fetchNewFact} />
       <Fact fact={fact} />

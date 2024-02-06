@@ -3,7 +3,6 @@ import React from "react";
 const Options = ({ setOption }) => {
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(typeof e.target.value);
     setOption(e.target.value);
   };
 
