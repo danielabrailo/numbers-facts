@@ -1,3 +1,7 @@
+![demo-gif](https://github.com/danielabrailo/numbers-facts/blob/main/facts-recording.gif)
+
+Live site: https://transcendent-kleicha-39dd54.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
