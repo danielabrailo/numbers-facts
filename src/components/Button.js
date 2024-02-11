@@ -1,11 +1,13 @@
 import React from "react";
 
-const Button = ({ setIsLoading, fetchNewFact, number, option }) => {
+const Button = ({ setIsLoading, fetchNewFact, number, option, setFact }) => {
   const handleClick = (e) => {
-    if (option != 1 && !number) return;
+    const optionsThatNeedNumber = option === 2 || option === 4 || option === 5;
+    if (optionsThatNeedNumber && !number) return;
 
+    setFact({});
     e.preventDefault();
-    // setIsLoading(true);
+    setIsLoading(true);
     fetchNewFact();
   };
 

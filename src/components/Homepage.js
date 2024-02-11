@@ -6,6 +6,7 @@ import Fact from "./Fact";
 import Input from "./Input";
 import Year from "./Year";
 import DateInput from "./DateInput";
+import Spinner from "./Spinner";
 
 const Homepage = () => {
   const [fact, setFact] = useState({});
@@ -17,8 +18,6 @@ const Homepage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchNewFact = () => {
-    console.log("number: " + number);
-
     fetchFromAPI(
       option === 1
         ? "random/trivia"
@@ -57,8 +56,10 @@ const Homepage = () => {
         fetchNewFact={fetchNewFact}
         number={number}
         option={option}
+        setFact={setFact}
       />
-      <Fact fact={fact} />
+      <Fact fact={fact} option={option} />
+      {isLoading && <Spinner />}
     </div>
   );
 };
