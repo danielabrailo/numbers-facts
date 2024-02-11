@@ -10,7 +10,7 @@ import Spinner from "./Spinner";
 
 const Homepage = () => {
   const [fact, setFact] = useState({});
-  const [option, setOption] = useState("1");
+  const [option, setOption] = useState();
   const [number, setNumber] = useState();
   const [day, setDay] = useState();
   const [month, setMonth] = useState();
@@ -51,13 +51,15 @@ const Homepage = () => {
       {(option === 2 || option === 4) && <Input setNumber={setNumber} />}
       {option === 3 && <DateInput setDay={setDay} setMonth={setMonth} />}
       {option === 5 && <Year setNumber={setNumber} />}
-      <Button
-        setIsLoading={setIsLoading}
-        fetchNewFact={fetchNewFact}
-        number={number}
-        option={option}
-        setFact={setFact}
-      />
+      {option && (
+        <Button
+          setIsLoading={setIsLoading}
+          fetchNewFact={fetchNewFact}
+          number={number}
+          option={option}
+          setFact={setFact}
+        />
+      )}
       <Fact fact={fact} option={option} />
       {isLoading && <Spinner />}
     </div>
