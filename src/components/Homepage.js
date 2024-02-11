@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
-import { useEffect } from "react";
 import Options from "./Options";
 import Button from "./Button";
 import Fact from "./Fact";
@@ -16,13 +15,6 @@ const Homepage = () => {
   const [month, setMonth] = useState();
 
   const [isLoading, setIsLoading] = useState(false);
-
-  //   useEffect(() => {
-  //     fetchFromAPI("random/trivia").then((data) => {
-  //       setFact(data);
-  //       setIsLoading(false);
-  //     });
-  //   }, []);
 
   const fetchNewFact = () => {
     console.log("number: " + number);
@@ -51,11 +43,21 @@ const Homepage = () => {
       <h3 className="explanation">
         Get facts on the option you choose from below!
       </h3>
-      <Options setOption={setOption} />
+      <Options
+        option={option}
+        setOption={setOption}
+        setFact={setFact}
+        setNumber={setNumber}
+      />
       {(option === 2 || option === 4) && <Input setNumber={setNumber} />}
       {option === 3 && <DateInput setDay={setDay} setMonth={setMonth} />}
       {option === 5 && <Year setNumber={setNumber} />}
-      <Button setIsLoading={setIsLoading} fetchNewFact={fetchNewFact} />
+      <Button
+        setIsLoading={setIsLoading}
+        fetchNewFact={fetchNewFact}
+        number={number}
+        option={option}
+      />
       <Fact fact={fact} />
     </div>
   );
