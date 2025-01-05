@@ -8,7 +8,7 @@ const options = {
     json: "true",
   },
   headers: {
-    "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KET,
+    "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
     "X-RapidAPI-Host": "numbersapi.p.rapidapi.com",
   },
 };
